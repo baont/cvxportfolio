@@ -23,8 +23,7 @@ __all__ = ['time_matrix_locator', 'time_locator', 'null_checker',
 
 def null_checker(obj):
     """Check if obj contains NaN."""
-    if (isinstance(obj, pd.Panel) or
-        isinstance(obj, pd.DataFrame) or
+    if (isinstance(obj, pd.DataFrame) or
             isinstance(obj, pd.Series)):
         if np.any(pd.isnull(obj)):
             raise ValueError('Data object contains NaN values', obj)

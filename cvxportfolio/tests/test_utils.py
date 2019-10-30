@@ -70,13 +70,3 @@ class TestUtils(BaseTest):
         self.assertTrue(np.allclose(self.returns.loc[t],
                                     time_locator(self.returns.loc[t], t)))
 
-    def test_matrix_locator(self):
-        """Test matrix locator."""
-        index = ['a', 'b', 'c']
-        df = pd.DataFrame(index=index, columns=index,
-                          data=[[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-        pn = pd.Panel({'1': df, '2': df * 2})
-        self.assertTrue(np.allclose(df.values,
-                                    time_matrix_locator(df, t=12)))
-        self.assertTrue(np.allclose(df.values * 2,
-                                    time_matrix_locator(pn, t='2')))

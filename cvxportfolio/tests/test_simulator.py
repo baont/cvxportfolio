@@ -68,9 +68,9 @@ class TestSimulator(BaseTest):
         h_next, u = self.Simulator.propagate(h, u=u, t=t)
         results.log_simulation(t=t, u=u, h_next=h_next,
                                risk_free_return=0., exec_time=0)
-        self.assertAlmostEquals(
+        self.assertAlmostEqual(
             results.simulator_TcostModel.sum().sum(), 157.604, 3)
-        self.assertAlmostEquals(
+        self.assertAlmostEqual(
             results.simulator_HcostModel.sum().sum(), 0., 3)
         self.assertAlmostEqual(sum(h_next), 28906767.251, 3)
 
@@ -84,9 +84,9 @@ class TestSimulator(BaseTest):
         h_next, u = self.Simulator.propagate(h, u, t=t)
         results.log_simulation(t=t, u=u, h_next=h_next,
                                risk_free_return=0., exec_time=0)
-        self.assertAlmostEquals(
+        self.assertAlmostEqual(
             results.simulator_TcostModel.sum().sum(), 157.604, 3)
-        self.assertAlmostEquals(
+        self.assertAlmostEqual(
             results.simulator_HcostModel.sum().sum(), 0., 3)
         self.assertAlmostEqual(sum(h_next), 28906767.251, 3)
 
@@ -100,9 +100,9 @@ class TestSimulator(BaseTest):
         h_next, u = self.Simulator.propagate(h, u, t=t)
         results.log_simulation(t=t, u=u, h_next=h_next,
                                risk_free_return=0., exec_time=0)
-        self.assertAlmostEquals(
+        self.assertAlmostEqual(
             results.simulator_TcostModel.sum().sum(), 157.604, 3)
-        self.assertAlmostEquals(
+        self.assertAlmostEqual(
             results.simulator_HcostModel.sum().sum(), 0., 3)
         self.assertAlmostEqual(sum(h_next), 28908611.931, 3)
 
@@ -117,7 +117,7 @@ class TestSimulator(BaseTest):
         h_next, u = self.Simulator.propagate(h, u, t=t)
         results.log_simulation(t=t, u=u, h_next=h_next,
                                risk_free_return=0., exec_time=0)
-        self.assertAlmostEquals(results.simulator_HcostModel.sum().sum(), 0.)
+        self.assertAlmostEqual(results.simulator_HcostModel.sum().sum(), 0.)
 
     def test_hcost_neg(self):
         """Test hcost function, negative positions."""
@@ -131,5 +131,5 @@ class TestSimulator(BaseTest):
         results.log_simulation(t=t, u=u, h_next=h_next,
                                risk_free_return=0.,
                                exec_time=0)
-        self.assertAlmostEquals(
+        self.assertAlmostEqual(
             results.simulator_HcostModel.sum().sum(), 2800.0)
