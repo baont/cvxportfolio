@@ -1,0 +1,12 @@
+{
+  "name": "bao portfolio",
+  "type": "crypto",
+  "balance":{
+    "USDT": 1000,
+    "BTC": 1,
+    "ETH": 0,
+    "XVG": 0,
+    "ADA": 0,
+    "LTC": 0
+  }
+}
